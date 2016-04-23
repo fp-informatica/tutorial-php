@@ -116,7 +116,6 @@ class Tutorial_PHP
             if ($info != null) {
                 $password = $this->genHash($password, $info["regdate"]);
                 if($password == $info["password"]) {
-                    $this->logged = 1;
                     $_SESSION["logged"] = 1;
                     $_SESSION["username"] = $info["username"];
                     return "Se ha identificado correctamente";
