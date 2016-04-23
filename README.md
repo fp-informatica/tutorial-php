@@ -46,13 +46,20 @@ const PASS_DB   = '';
 const DB_NAME   = '';
 ```
 
-[Descargar los ficheros](https://github.com/jslirola/tutorial-php/archive/master.zip) del repositorio en un directorio que reconozco vuestro servidor web, por ejemplo:
+[Descargar los ficheros](https://github.com/jslirola/tutorial-php/archive/master.zip) del repositorio en un directorio que reconozca vuestro servidor web, por ejemplo:
 
 * /var/www/html/tutorial-php
 * C:\Program Files\Apache2\htdocs\tutorial-php
 
-Por último (con el servidor iniciado) abrir en un navegador web la dirección que corresponda con el directorio, en mi caso: http://localhost/tutorial-php/
+Por último (con el servidor iniciado) abrir en un navegador web la dirección que corresponda con el directorio, en mi caso:
+
+http://localhost/tutorial-php/
+
+Pulsando en el menú superior sobre el enlace "Zona privada" se mostrarán dos formularios para realizar el alta de usuarios y su identificación.
+
 ## Change Log
+
+* v1.0: Alta e identificación de usuarios (Zona privada)
 
 ## Contribuir
 
