@@ -7,11 +7,19 @@ Además se usa la extensión mysqli para la conexión y se han declarado método
 Vista previa:
 ![Tutorial PHP](preview.png)
 
+## Diseño Responsive
+
+Para este proyecto se ha optado por un diseño sencillo y adaptable a la mayoría de los dispositivos. Para conseguirlo se ha usado [Foundation](https://github.com/zurb/foundation-sites), uno de los frameworks CSS más conocidos.
+
 ## Requisitos
 
 * Apache o Nginx
 * MySQL
 * PHP
+
+Para los usuarios que se están iniciando en este mundillo recomiendo los [paquetes de software](https://en.wikipedia.org/wiki/List_of_AMP_packages) que ya integran estas tres herramientas.
+
+Si hay dudas a la hora de elegir uno de estos, recomiendo [XAMPP](https://www.apachefriends.org).
 
 ## Instalación
 
