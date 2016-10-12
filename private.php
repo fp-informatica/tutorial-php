@@ -62,7 +62,7 @@
 
     } else { // The user has logged
 
-      echo "<p> Bienvenido a la zona privada <i>" . $_SESSION["username"] . "</i> </p>";
+      echo "<p> Bienvenido a la zona privada <i>" . $_SESSION["user"]["username"] . "</i> </p>";
 
     }
 

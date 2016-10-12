@@ -28,7 +28,7 @@ class Tutorial_PHP
         if (DB_NAME == "")
             die("Configure la conexión a la base de datos en el fichero `include/db.php` antes de continuar.");
         else {
-        $this->link = new mysqli(SERVER_DB, USER_DB, PASS_DB, DB_NAME);
+            $this->link = new mysqli(SERVER_DB, USER_DB, PASS_DB, DB_NAME);
             if ($this->link->connect_error)
                 die("Connect Error (" . $this->link->connect_errno . ") " . $this->link->connect_error);
         }
@@ -123,7 +123,7 @@ class Tutorial_PHP
                 $password = $this->genHash($password, $info["regdate"]);
                 if($password == $info["password"]) {
                     $_SESSION["logged"] = 1;
-                    $_SESSION["username"] = $info["username"];
+                    $_SESSION["user"] = $info;
                     return "Se ha identificado correctamente.";
                 }
             }
