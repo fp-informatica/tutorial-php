@@ -31,7 +31,7 @@
               <input type="email" name="email" placeholder="somebody@example.com" required>
             </label>
             <label>Contraseña
-              <input type="text" name="password" placeholder="Password" required>
+              <input type="password" name="password" placeholder="Password" required>
             </label>
             <input type="hidden" name="sent" value="register">
             <p><input type="submit" class="button expanded" value="Registro"></p>
@@ -63,10 +63,7 @@
     } else { // The user has logged
 
       echo "<p> Bienvenido a la zona privada <i>" . $_SESSION["username"] . "</i> </p>";
-      echo '<form method="post">
-              <input type="hidden" name="sent" value="logout">            
-              <p><input type="submit" class="button" value="Logout"></p>
-            </form>';
+
     }
 
     ?>

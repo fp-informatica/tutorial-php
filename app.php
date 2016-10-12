@@ -7,7 +7,13 @@
  * @link https://github.com/jslirola/tutorial-php 
  */
 session_start();
-require_once("include/db.php");
+header('Content-Type: text/html; charset=UTF-8');
+
+$config = "include/db.php";
+if(file_exists($config))
+    require_once("include/db.php");
+else
+    die("Debe renombrar el fichero include/db_example.php a include/db.php para iniciar el sistema.");
 
 class Tutorial_PHP
 {
@@ -20,7 +26,7 @@ class Tutorial_PHP
     public function __construct()
     {
         if (DB_NAME == "")
-            die("Configure la conexion a la base de datos en el fichero `include/db.php` antes de continuar.");
+            die("Configure la conexión a la base de datos en el fichero `include/db.php` antes de continuar.");
         else {
         $this->link = new mysqli(SERVER_DB, USER_DB, PASS_DB, DB_NAME);
             if ($this->link->connect_error)
@@ -85,7 +91,7 @@ class Tutorial_PHP
     {
         if (!empty($email) && $this->checkEmail($email) == 0) {
             if (empty($username) || empty($password))
-                return "Todos los campos son obligatorios";
+                return "Todos los campos son obligatorios.";
 
             $username = $this->link->real_escape_string($username);
             $email = $this->link->real_escape_string($email);
@@ -94,11 +100,11 @@ class Tutorial_PHP
             $ip = $_SERVER["REMOTE_ADDR"];
             if ($this->link->query("INSERT INTO users (username, password, email, regdate, ip) VALUES 
                 ('$username','$password','$email','$regdate','$ip')"))
-                return "Alta realizada correctamente";
+                return "Alta realizada correctamente.";
             else
-                return "Ha ocurrido un error durante su registro";
+                return "Ha ocurrido un error durante su registro.";
         } else
-            return "El email introducido no es correcto o ya existe";
+            return "El email introducido no es correcto o ya existe.";
     }
 
     /**
@@ -118,11 +124,11 @@ class Tutorial_PHP
                 if($password == $info["password"]) {
                     $_SESSION["logged"] = 1;
                     $_SESSION["username"] = $info["username"];
-                    return "Se ha identificado correctamente";
+                    return "Se ha identificado correctamente.";
                 }
             }
         }
-        return "El email o la contraseña introducida no son correctos";
+        return "El email o la contraseña introducida no son correctos.";
     }
 
     /**
@@ -134,9 +140,9 @@ class Tutorial_PHP
         if ($this->isLogged()) {
             session_unset();
             session_destroy();
-            return "Se ha desconectado correctamente";
+            return "Se ha desconectado correctamente.";
         } else
-            return "Ha ocurrido un error al desconectarse";
+            return "Ha ocurrido un error al desconectarse.";
     }
 
 }
@@ -153,4 +159,11 @@ if (isset($_POST["sent"])) { // A form has been sent
         $msgForm = $app->logout();
     } else
         die();
+} else if (isset($_GET['action'])) {
+
+    if ($_GET['action'] == "logout") {
+        $msgForm = $app->logout();
+    } else
+        die();
+
 }
