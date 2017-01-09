@@ -38,7 +38,7 @@
           `username` varchar(40) NOT NULL,<br>
           `password` varchar(40) NOT NULL,<br>
           `email` varchar(100) NOT NULL,<br>
-          `regdate` unsigned int NOT NULL,<br>
+          `regdate` int unsigned NOT NULL,<br>
           `ip` varchar(40) NOT NULL,<br>
           PRIMARY KEY (`id`)<br>
           ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
